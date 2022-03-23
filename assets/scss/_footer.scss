@@ -1,0 +1,93 @@
+footer {
+  background-color: $darkBlue;
+}
+.footer {
+  padding: 40px;
+  padding-bottom: 20px;
+  max-width: 89.2rem;
+  margin: 0 auto;
+  font-size: $fontSmall;
+  text-align: center;
+  @include breakpoint-up(large) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "logo links1 links2 cta"
+      "smlinks links1 links2 cta";
+    justify-items: end;
+  }
+  &__logo {
+    @include breakpoint-up(large) {
+      grid-area: logo;
+      justify-self: center;
+    }
+  }
+  &__smlinks {
+    @include breakpoint-up(large) {
+      grid-area: smlinks;
+      margin: 0rem;
+      justify-self: center;
+    }
+    margin: 1.875rem;
+    a {
+      margin: 0.43rem;
+      img {
+        transition: all 115ms ease-in-out;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint-up(large) {
+      align-items: flex-start;
+    }
+    &.col1 {
+      a {
+        margin-bottom: 1rem;
+        transition: all 115ms ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+          color: $limeGreen;
+        }
+      }
+      @include breakpoint-up(large) {
+        grid-area: links1;
+        align-items: flex-start;
+      }
+    }
+    &.col2 {
+      a {
+        margin-bottom: 1rem;
+        transition: all 115ms ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+          color: $limeGreen;
+        }
+      }
+      @include breakpoint-up(large) {
+        grid-area: links2;
+      }
+    }
+  }
+  &__cta {
+    margin: 1.875rem;
+    @include breakpoint-up(large) {
+      grid-area: cta;
+      margin: 0;
+      justify-self: end;
+      text-align: right;
+    }
+  }
+  &__copy {
+    margin: 1.875rem;
+    @include breakpoint-up(large) {
+      margin-bottom: 0;
+      margin-right: 0;
+    }
+  }
+}
